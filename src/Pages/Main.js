@@ -74,28 +74,39 @@ function Main() {
       }}
     >
       <Menu />
-      <Box component="main" sx={{ p: 3 }}></Box>
-      <Box sx={{ ml: 35, mr: 35, mt: 5, borderRadius: "30px", boxShadow: 2 }}>
+
+      <Box sx={{ ml: 35, mr: 35, mt: 12, borderRadius: "30px", boxShadow: 2 }}>
         <Box
           sx={{
             bgcolor: "rgb(230, 230, 230)",
             borderTopLeftRadius: "30px",
             borderTopRightRadius: "30px",
-            height: "500px",
+            height: { md: "10%", lg: "15%", xl: "20%" },
             display: "flex",
             position: "relative",
             justifyContent: "center",
-
             alignItems: "center",
-            gap: 20,
+            gap: { md: 4, lg: 8, xl: 18 },
           }}
         >
-          <Card sx={{ border: "solid 1px", borderRadius: "30px" }}>
+          <Card
+            sx={{
+              border: "solid 1px",
+              borderRadius: "30px",
+              height: {
+                sm: "51%",
+                md: "54%",
+                lg: "57%",
+                xl: "60%",
+              },
+              width: window.innerWidth * 0.15,
+            }}
+          >
             <CardMedia
               sx={{
-                height: window.innerWidth * 0.15,
-                width: window.innerWidth * 0.15,
-                objectFit: "contain",
+                height: "100%",
+                width: "100%",
+                objectFit: "fill", // Ensures the image fills the area without distortion
               }}
               image={Me}
               alt="Me"
@@ -109,10 +120,17 @@ function Main() {
               color: "black",
             }}
           >
-            <Typography sx={{ fontSize: 56, fontWeight: "bold" }}>
+            <Typography
+              sx={{
+                fontSize: { sm: 20, md: 35, lg: 48, xl: 56 },
+                fontWeight: "bold",
+              }}
+            >
               Alex Hristov
             </Typography>
-            <Typography sx={{ fontSize: 26, mt: 3 }}>
+            <Typography
+              sx={{ fontSize: { sm: 12, md: 20, lg: 23, xl: 26 }, mt: 3 }}
+            >
               Software Developer
             </Typography>
             <Box sx={{ display: "flex" }}>
@@ -122,7 +140,7 @@ function Main() {
                     bgcolor: "rgb(255, 255, 255)",
                     color: "rgb(25, 118, 210)",
                     borderRadius: 100,
-                    fontSize: 36,
+
                     ":hover": "",
                     ml: 3,
                     mt: 3,
@@ -271,7 +289,17 @@ function Main() {
               sx={{
                 width: window.innerWidth * 0.15,
                 boxShadow: 4,
-                height: window.innerHeight * 0.4,
+                height: {
+                  md: window.innerHeight * 0.6,
+                  lg: window.innerHeight * 0.6,
+                  xl: window.innerHeight * 0.5,
+                },
+                background: {
+                  sm: "red",
+                  md: "blue",
+                  lg: "yellow",
+                  xl: "green",
+                },
               }}
             >
               <Box
@@ -285,8 +313,7 @@ function Main() {
                   backgroundColor: "rgb(255, 255, 255)", // Choose a color
                   borderRadius: "50%",
                   position: "absolute",
-                  top: "0%",
-                  left: "12.8%",
+                  transform: "translate(66%, -50%)",
                   pt: 1,
 
                   color: "",
@@ -349,8 +376,7 @@ function Main() {
                   backgroundColor: "rgb(255, 255, 255)", // Choose a color
                   borderRadius: "50%",
                   position: "absolute",
-                  top: "0px",
-                  left: "46%",
+                  transform: "translate(66%, -50%)",
                   pt: 1,
                 }}
               >
@@ -411,8 +437,7 @@ function Main() {
                   backgroundColor: "rgb(255, 255, 255)", // Choose a color
                   borderRadius: "50%",
                   position: "absolute",
-                  top: "0%",
-                  left: "80%",
+                  transform: "translate(70%, -50%)",
                 }}
               >
                 <img sx={{ pt: 5 }} src={FrameworkIcon} />
@@ -466,7 +491,7 @@ function Main() {
           display: "flex",
           color: "black",
           justifyContent: "center",
-          mt: 6,
+          mt: 30,
           pb: 3,
         }}
       >
