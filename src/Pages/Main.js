@@ -33,15 +33,15 @@ import Menu from "./Menu.js";
 function Main() {
   const icons = [
     {
-      iconBut: <InstagramIcon />,
+      iconBut: <InstagramIcon sx={{ fontSize: { lg: 30, xl: 40 } }} />,
       url: "https://www.instagram.com/a.hristov_05/",
     },
     {
-      iconBut: <FacebookIcon />,
+      iconBut: <FacebookIcon sx={{ fontSize: { lg: 30, xl: 40 } }} />,
       url: "https://www.facebook.com/profile.php?id=100023840763475",
     },
     {
-      iconBut: <LinkedInIcon />,
+      iconBut: <LinkedInIcon sx={{ fontSize: { lg: 30, xl: 40 } }} />,
       url: "https://www.linkedin.com/in/alex-hristov-14b00a277/",
     },
   ];
@@ -75,7 +75,15 @@ function Main() {
     >
       <Menu />
 
-      <Box sx={{ ml: 35, mr: 35, mt: 12, borderRadius: "30px", boxShadow: 2 }}>
+      <Box
+        sx={{
+          ml: { xs: "13%", sm: "13%", md: "15%", lg: "18%", xl: "20%" },
+          mr: { xs: "13%", sm: "13%", md: "15%", lg: "18%", xl: "20%" },
+          mt: { xs: "8%", sm: "8%", md: "7%" },
+          borderRadius: "30px",
+          boxShadow: 2,
+        }}
+      >
         <Box
           sx={{
             bgcolor: "rgb(230, 230, 230)",
@@ -86,7 +94,7 @@ function Main() {
             position: "relative",
             justifyContent: "center",
             alignItems: "center",
-            gap: { md: 4, lg: 8, xl: 18 },
+            gap: { xs: 6, sm: 7, md: 10, lg: 8, xl: 16 },
           }}
         >
           <Card
@@ -94,12 +102,19 @@ function Main() {
               border: "solid 1px",
               borderRadius: "30px",
               height: {
-                sm: "51%",
-                md: "54%",
-                lg: "57%",
-                xl: "60%",
+                xs: window.innerHeight * 0.25,
+                sm: window.innerHeight * 0.23,
+                md: window.innerHeight * 0.35,
+                lg: window.innerHeight * 0.35,
+                xl: window.innerHeight * 0.36,
               },
-              width: window.innerWidth * 0.15,
+              width: {
+                xs: window.innerWidth * 0.14,
+                sm: window.innerWidth * 0.12,
+                md: window.innerWidth * 0.16,
+                lg: window.innerWidth * 0.13,
+                xl: window.innerWidth * 0.14,
+              },
             }}
           >
             <CardMedia
@@ -133,17 +148,20 @@ function Main() {
             >
               Software Developer
             </Typography>
-            <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                display: "flex",
+                width: "80%",
+                justifyContent: "space-between",
+                mt: 5,
+              }}
+            >
               {icons.map((icon) => (
                 <IconButton
                   sx={{
                     bgcolor: "rgb(255, 255, 255)",
                     color: "rgb(25, 118, 210)",
                     borderRadius: 100,
-
-                    ":hover": "",
-                    ml: 3,
-                    mt: 3,
                   }}
                   onClick={() => window.open(icon.url)}
                 >
@@ -171,23 +189,43 @@ function Main() {
               width: "100%",
             }}
           >
-            <Typography sx={{ fontSize: 28, fontWeight: "bold" }}>
+            <Typography
+              sx={{
+                fontSize: { xs: 18, sm: 20, md: 22, lg: 25, xl: 28 },
+                fontWeight: "bold",
+              }}
+            >
               За мен
             </Typography>
-            <Typography sx={{ mt: 3, fontSize: 20 }}>
+            <Typography
+              sx={{
+                mt: 3,
+                fontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+              }}
+            >
               Моето име е Алекс Христов. 1 курс студент съм във Софийския
               университет във Факултетат по математика и информатика(ФМИ).
               Завършил съм НПМГ в гр. София със специалност Софтуерни и
               Хардуерни науки.
             </Typography>
-            <Typography sx={{ mt: 3, fontSize: 20 }}>
+            <Typography
+              sx={{
+                mt: 3,
+                fontSizfontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+              }}
+            >
               За себе си мога да кажа, че съм постянен, работещ в екип,
               комуникативен, амбициозен, търпелив. Моите най-добри качества са
               отговорност, изпълнителност, точност, адаптивност, коректност и
               стремеж за развитие. Приоритетите ми са да свърша в срок
               поставените ми задачи.
             </Typography>
-            <Typography sx={{ mt: 3, fontSize: 20 }}>
+            <Typography
+              sx={{
+                mt: 3,
+                fontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+              }}
+            >
               От 5 клас посещавах Telerik Academy, в която програмирах. Там
               изучвах JavaScript. Веднага след приемането ми в НПМГ започнах да
               участвам в олимпиади по Информационни технологии. В 8 клас
@@ -195,7 +233,12 @@ function Main() {
               досега съм използвал следните: JavaScript, Python, PHP, MySQL,
               C++, C#, Java, Kotlin.
             </Typography>
-            <Typography sx={{ mt: 3, fontSize: 20 }}>
+            <Typography
+              sx={{
+                mt: 3,
+                fontSifontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+              }}
+            >
               Други допълнения към езиците, които ползвам са jQuery, Ajax,
               Bootstrap, Angular.js и React.js към JavaScript, Pygame, OpenCV и
               Yolov5 към Python, използвам съм Аndroid studio за проекти на Java
@@ -219,16 +262,53 @@ function Main() {
             }}
           >
             <Box>
-              <Typography sx={{ fontSize: 25 }}>Age</Typography>
-              <Typography sx={{ fontSize: 25, mt: 2 }}>Residence</Typography>
-              <Typography sx={{ fontSize: 25, mt: 2 }}>Email</Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                  fontWeight: "bold",
+                }}
+              >
+                Age
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                  fontWeight: "bold",
+                  mt: 2,
+                }}
+              >
+                Residence
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                  fontWeight: "bold",
+                  mt: 2,
+                }}
+              >
+                Email
+              </Typography>
             </Box>
             <Box>
-              <Typography sx={{ fontSize: 25 }}>
+              <Typography
+                sx={{ fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 } }}
+              >
                 {today.getFullYear() - 2005}
               </Typography>
-              <Typography sx={{ fontSize: 25, mt: 2 }}>Bulgaria</Typography>
-              <Typography sx={{ fontSize: 25, mt: 2 }}>
+              <Typography
+                sx={{
+                  fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                  mt: 2,
+                }}
+              >
+                Bulgaria
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                  mt: 2,
+                }}
+              >
                 alexhr05@gmail.com
               </Typography>
             </Box>
@@ -255,7 +335,7 @@ function Main() {
           >
             <Typography
               sx={{
-                fontSize: 25,
+                fontSize: { xs: 16, sm: 18, md: 20, lg: 23, xl: 25 },
                 borderLeft: 5,
                 borderRight: 5,
                 pl: 2,
@@ -267,7 +347,12 @@ function Main() {
               Преглед на умения
             </Typography>
             <Box></Box>
-            <Typography sx={{ mt: 3, fontSize: 22 }}>
+            <Typography
+              sx={{
+                mt: 3,
+                fontSize: { xs: 14, sm: 16, md: 18, lg: 20, xl: 22 },
+              }}
+            >
               Имам повече от {today.getFullYear() - 2019} години опит в
               изграждането на уеб приложения за олимпиади или за определени
               нужди. По-долу е представена кратка преглед на основните ми
