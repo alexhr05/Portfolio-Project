@@ -211,7 +211,7 @@ function Main() {
             <Typography
               sx={{
                 mt: 3,
-                fontSizfontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+                fontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
               }}
             >
               За себе си мога да кажа, че съм постянен, работещ в екип,
@@ -236,7 +236,7 @@ function Main() {
             <Typography
               sx={{
                 mt: 3,
-                fontSifontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
+                fontSize: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20 },
               }}
             >
               Други допълнения към езиците, които ползвам са jQuery, Ajax,
@@ -372,19 +372,17 @@ function Main() {
           >
             <Card
               sx={{
-                width: window.innerWidth * 0.15,
+                width: "fit-content",
+                height: "auto",
                 boxShadow: 4,
-                height: {
-                  md: window.innerHeight * 0.6,
-                  lg: window.innerHeight * 0.6,
-                  xl: window.innerHeight * 0.5,
-                },
                 background: {
                   sm: "red",
                   md: "blue",
                   lg: "yellow",
                   xl: "green",
                 },
+                whiteSpace: "normal",
+                mb: 2,
               }}
             >
               <Box
@@ -392,19 +390,25 @@ function Main() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "100px", // Adjust size as needed
-                  height: "100px",
                   // backgroundColor: "rgb(25, 118, 210)", // Choose a color
                   backgroundColor: "rgb(255, 255, 255)", // Choose a color
                   borderRadius: "50%",
                   position: "absolute",
-                  transform: "translate(66%, -50%)",
+                  transform: {
+                    xs: "translate(5%, -50%)",
+                    sm: "translate(30%, -50%)",
+                    md: "translate(45%, -50%)",
+                    lg: "translate(55%, -50%)",
+                    xl: "translate(66%, -50%)",
+                  },
                   pt: 1,
-
-                  color: "",
                 }}
               >
-                <img sx={{ pt: 5 }} src={FrontendIcon} />
+                <CardMedia
+                  component="img"
+                  sx={{ width: { md: "80%", lg: "88%", xl: "95%" } }}
+                  src={FrontendIcon}
+                />
               </Box>
               <CardContent
                 sx={{
@@ -413,7 +417,13 @@ function Main() {
                   flexDirection: "column",
                 }}
               >
-                <Typography sx={{ mb: 1.5, fontSize: 25, textAlign: "center" }}>
+                <Typography
+                  sx={{
+                    mb: 1.5,
+                    fontSize: { xs: 16, sm: 18, md: 20, lg: 22, xl: 25 },
+                    textAlign: "center",
+                  }}
+                >
                   Frontend
                 </Typography>
                 <Box
@@ -429,13 +439,17 @@ function Main() {
                       sx={{
                         display: "flex",
                         mr: 2,
-                        mt: 1,
-                        pl: 5,
+                        mt: 0.5,
+                        pl: { xs: 0, sm: 1, md: 1, lg: 2, xl: 4 },
                       }}
                     >
                       <CheckIcon color="primary" />
 
-                      <Typography variant="body2" fontSize={20} sx={{ pl: 4 }}>
+                      <Typography
+                        variant="body2"
+                        fontSize={{ xs: 11, sm: 13, md: 15, lg: 17, xl: 20 }}
+                        sx={{ pl: { xs: 0, sm: 1, md: 2, lg: 3, xl: 4 } }}
+                      >
                         {frontendSkill}
                       </Typography>
                     </Box>
@@ -445,8 +459,8 @@ function Main() {
             </Card>
             <Card
               sx={{
-                width: window.innerWidth * 0.15,
-                height: window.innerHeight * 0.4,
+                width: "fit-content",
+                height: "auto",
                 boxShadow: 4,
               }}
             >
@@ -506,8 +520,8 @@ function Main() {
             </Card>
             <Card
               sx={{
-                width: window.innerWidth * 0.15,
-                height: window.innerHeight * 0.4,
+                width: "fit-content",
+                height: "auto",
                 boxShadow: 4,
               }}
             >
@@ -518,7 +532,7 @@ function Main() {
                   justifyContent: "center",
                   width: "100px", // Adjust size as needed
                   height: "100px",
-                  // backgroundColor: "blue", // Choose a color
+
                   backgroundColor: "rgb(255, 255, 255)", // Choose a color
                   borderRadius: "50%",
                   position: "absolute",
